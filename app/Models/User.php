@@ -3,13 +3,17 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+
+use Filament\Panel;
+use Filament\Models\Contracts\FilamentUser;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-class User extends Authenticatable
+class User extends Authenticatable implements FilamentUser
 {
-    use HasFactory, Notifiable;
+    use HasFactory, SoftDeletes, Notifiable;
 
     /**
      * The attributes that are mass assignable.
@@ -43,5 +47,33 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    const ROLE_SUPER_ADMIN  = 'super-admin';
+    const ROLE_ADMIN        = 'admin';
+    const ROLE_MODERATOR    = 'moderator';
+    const ROLE_USER         = 'user';
+    
+    const ROLES = [
+        self::ROLE_SUPER_ADMIN  => 'super-admin',
+        self::ROLE_ADMIN        => 'admin',
+        self::ROLE_MODERATOR    => 'moderator',
+        self::ROLE_USER         => 'user',
+    ];
+
+    
+    public function canAccessPanel(Panel $panel): bool
+    {
+        return $this->SuperAdmin() || $this->Admin() || $this->Moderator();
+    }
+
+    public function SuperAdmin(){
+        return $this->role === self::ROLE_SUPER_ADMIN;
+    }
+    public function Admin(){
+        return $this->role === self::ROLE_ADMIN; 
+    }
+    public function Moderator(){
+        return $this->role === self::ROLE_MODERATOR;
     }
 }

@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
         User::factory()->create([
             'name' => 'Mannan Shihab',
             'email' => 'info@slicetech.org',
+            'role' => 'super-admin',
             'password' => bcrypt('Mannan07'),
         ]);
     }
