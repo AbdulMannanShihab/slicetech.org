@@ -19,6 +19,12 @@
             {{ $slot }}
         </main>
         @livewire('partials.footer')
+        <script>
+            document.querySelector('.hs-collapse-toggle').addEventListener('click', function() {
+              const navbar = document.getElementById('navbar-collapse-with-animation');
+              navbar.classList.toggle('hidden');
+            });
+        </script>
         @livewireScripts
     </body>
 </html>
