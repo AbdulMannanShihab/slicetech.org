@@ -1,7 +1,7 @@
 <p align="center"><a href="https://slicetech.org" target="_blank"><img src="https://github.com/mannanshihab/slicetech.org/blob/main/public/asset/images/SliceTechLogo.png" width="400" alt="Laravel Logo"></a></p>
 
 
-# About SliceTech
+# SliceTech
 
 The **SliceTech** platform is built with the latest technologies, ensuring modern, efficient, and scalable web development. The codebase is designed to provide a seamless user experience while utilizing cutting-edge tools to maintain performance and flexibility.
 
