@@ -9,6 +9,7 @@ use Filament\Forms;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\Section;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Forms\Set;
@@ -54,6 +55,14 @@ class CategoryResource extends Resource
                         ->disk('real_public')
                         ->optimize('webp')
                         ->directory('Category'),
+
+                    Select::make('status')
+                        ->options([
+                            'Active' => 'Active',
+                            'Inactive' => 'Inactive',
+                        ])
+                        ->default('Active')
+                        ->preload(),
                 ]),
 
                 Hidden::make('user_id')
@@ -70,6 +79,15 @@ class CategoryResource extends Resource
                 Tables\Columns\TextColumn::make('slug')
                     ->searchable(),
                 Tables\Columns\ImageColumn::make('image'),
+
+                Tables\Columns\TextColumn::make('status')
+                ->badge()
+                ->color(fn (string $state): string => match ($state){
+                    'active' => 'success',
+                    'inactive' => 'danger',
+                })
+                ->searchable(),
+
                 Tables\Columns\TextColumn::make('user.name')
                     ->sortable(),
                 Tables\Columns\TextColumn::make('deleted_at')

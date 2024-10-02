@@ -9,7 +9,7 @@ class Navbar extends Component
 {
     public function render()
     {
-        $categories =Category::all();
+        $categories =Category::where('status', 'Active')->get();
         return view('livewire.partials.navbar', [
             'categories' => $categories
         ]);
