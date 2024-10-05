@@ -1,7 +1,7 @@
 <div class="bg-white">
     <!-- Search Box -->
     <div class="max-w-xl mx-auto pt-10">
-        <form class="flex items-center w-full max-w-md mx-auto">
+        <form class="flex items-center w-full px-4 max-w-md mx-auto">
             <label for="search" class="sr-only">Search</label>
             <input type="text" wire:model.live.debounce.250ms="search" name="search" id="search" placeholder="Search" class="w-full px-4 py-2 rounded-md border-t border-b border-l border-r border-blue-200 border-t-blue-400 border-b-blue-600 focus:outline-none focus:ring-1 focus:ring-gray-500">
         </form>
@@ -43,7 +43,6 @@
                 </div>
             @endforelse
            
-        
         </div>
         <!-- End Grid -->
     </div>
