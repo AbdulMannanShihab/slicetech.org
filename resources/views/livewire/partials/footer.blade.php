@@ -14,7 +14,8 @@
 
         <div class="mt-3 grid space-y-3">
           @foreach ($categories as $category)
-            <p><a class="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="">{{$category->name}}</a></p>
+            <p><a wire:navigate class="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" 
+            href="{{ route('category', $category->slug) }}" href="">{{$category->name}}</a></p>
           @endforeach
         </div>
       </div>

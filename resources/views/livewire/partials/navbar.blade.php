@@ -28,7 +28,8 @@
             <a wire:navigate class="text-xl font-bold {{ request()->is('/') ? 'text-blue-600' : 'text-gray-500' }} py-3 md:py-6 dark:text-blue-500 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="/" aria-current="page">Home</a>
             
             @foreach ($categories as $category)
-              <a wire:navigate class="text-xl font-bold {{ request()->is('/laravel') ? 'text-blue-600' : 'text-gray-500' }} py-3 md:py-6 dark:text-blue-500 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="/" aria-current="page">{{$category->name}}</a>
+              <a wire:navigate class="text-xl font-bold {{ request()->is('category/'.$category->slug) ? 'text-blue-600' : 'text-gray-500' }} py-3 md:py-6 dark:text-blue-500 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" 
+              href="{{ route('category', $category->slug) }}" href="" aria-current="page">{{$category->name}}</a>
             @endforeach
            
           </div>
