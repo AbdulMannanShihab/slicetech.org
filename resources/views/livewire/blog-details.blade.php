@@ -104,7 +104,7 @@
             <figure>
                 <img class="w-full object-cover rounded-xl" src="{{ asset($image) }}" alt="Blog Image">
                 <figcaption class="mt-3 text-sm text-center text-gray-500 dark:text-neutral-500">
-                    {{ $image.'image' }}
+                    {{ $title }}
                 </figcaption>
             </figure>
            
