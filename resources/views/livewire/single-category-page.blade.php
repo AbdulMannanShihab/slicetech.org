@@ -14,7 +14,7 @@
         
             @forelse ($blogs as $blog)
                 <!-- Card -->
-                <a class="group block rounded-xl overflow-hidden focus:outline-non" 
+                <a wire:navigate class="group block rounded-xl overflow-hidden focus:outline-non" 
                 href="{{ route('blog-details', $blog->slug) }}">
                     <div class="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-5">
                         <div class="shrink-0 relative rounded-xl overflow-hidden w-full sm:w-56 h-44">
