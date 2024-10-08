@@ -11,7 +11,7 @@ use Livewire\WithPagination;
 class Home extends Component
 {
     use WithPagination;
-    protected $paginationTheme = 'bootstrap';
+    protected $paginationTheme = 'tailwind';
     public $search = '';
     public $rows = 10;
 

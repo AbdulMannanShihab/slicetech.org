@@ -120,7 +120,7 @@
     <!-- End Blog Article -->
   
     <!-- Sticky Share Group -->
-    <div class="pb-6 inset-x-0 text-center">
+    <div class="pt-6 pb-6 inset-x-0 text-center">
         <div class="inline-block bg-white shadow-md rounded-full py-3 px-4 dark:bg-neutral-800">
         <div class="flex items-center gap-x-1.5">
             <!-- Button -->

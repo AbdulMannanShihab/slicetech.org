@@ -9,9 +9,9 @@ use Livewire\WithPagination;
 class SingleCategoryPage extends Component
 {
     use WithPagination;
-    protected $paginationTheme = 'bootstrap';
+    protected $paginationTheme = 'tailwind';
     public $search = '';
-    public $rows = 5;
+    public $rows = 10;
     public $slug;
 
     public function mount($slug)
