@@ -34,7 +34,7 @@ class PostResource extends Resource
 
     protected static ?int $navigationSort = 2;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-document-text';
 
     public static function form(Form $form): Form
     {
@@ -60,7 +60,7 @@ class PostResource extends Resource
                                 'Pending' => 'Pending',
                                 'Approved' => 'Approved',
                                 'Rejected' => 'Rejected',
-                            ])->required(),
+                            ])->default('Pending')->required(),
                     ]),
                     Hidden::make('user_id')
                     ->default(auth()->id()),
@@ -131,7 +131,7 @@ class PostResource extends Resource
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
-            ])
+            ])->defaultSort('id', 'desc')
             ->filters([
                 Tables\Filters\TrashedFilter::make(),
             ])

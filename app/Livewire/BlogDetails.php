@@ -3,7 +3,6 @@
 namespace App\Livewire;
 
 use App\Models\Post;
-use GuzzleHttp\Promise\Create;
 use Livewire\Attributes\Title;
 use Livewire\Component;
 #[Title('Blog Details')]
