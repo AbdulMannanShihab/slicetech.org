@@ -108,7 +108,7 @@
                 </figcaption>
             </figure>
            
-            <div class="prose prose-xl dark:prose-dark">
+            <div class="prose prose-xl dark:prose-dark text-justify">
                 {!! $description !!}
             </div>
     
