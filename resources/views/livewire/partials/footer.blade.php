@@ -7,7 +7,7 @@
           <img src="{{ asset('asset/images/SliceTechLogo.png') }}" class="rounded-lg" alt="SliceTechLogo">
         </a>
       </div>
-      <!-- End Col -->
+      <!-- End Col --> 
 
       <div class="col-span-2">
         <h4 class="font-semibold text-gray-100">Categories</h4>

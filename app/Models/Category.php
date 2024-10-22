@@ -10,6 +10,14 @@ class Category extends Model
 {
     use HasFactory, SoftDeletes;
 
+    protected $fillable = [
+        'name', 
+        'slug',
+        'user_id',
+        'image',  
+        'status',
+    ];
+
     protected $guarded = [];
 
     public function posts()
