@@ -14,12 +14,5 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         // User::factory(10)->create();
-
-        User::factory()->create([
-            'name' => 'Mannan Shihab',
-            'email' => 'info@slicetech.org',
-            'role' => 'super-admin',
-            'password' => bcrypt('Mannan07'),
-        ]);
     }
 }
