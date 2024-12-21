@@ -2,7 +2,10 @@
   <nav class="max-w-[85rem] w-full mx-auto px-4 md:px-6 lg:px-8" aria-label="Global">
     <div class="relative md:flex md:items-center md:justify-between">
       <div class="flex items-center justify-between">
-        <a wire:navigate class="flex-none text-4xl font-bold dark:text-white dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="/" aria-label="Brand"><h1>Slice<span class="text-blue-600">Tech</span></h1></a>
+        <a wire:navigate class="flex-none text-4xl font-bold dark:text-white dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="/" aria-label="Brand">
+          <h1 class="hidden">Slice<span class="text-blue-600">Tech</span></h1>
+          <img src="{{ asset('asset/images/SLICETECHFacebookCoverPhoto.png') }}" alt="sliceTech.image" width="220px">
+        </a>
         
         <div class="md:hidden">
           <div class="flex items-center justify-between">
