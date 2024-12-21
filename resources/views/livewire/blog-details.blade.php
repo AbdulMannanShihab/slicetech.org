@@ -16,7 +16,7 @@
                     <div class="hs-tooltip [--trigger:hover] [--placement:bottom] inline-block">
                     <div class="hs-tooltip-toggle sm:mb-1 block text-start cursor-pointer">
                         <span class="font-semibold text-gray-800 dark:text-neutral-200">
-                            SliceTech
+                            {{$auther}}
                         </span>
     
                         <!-- Dropdown Card -->
