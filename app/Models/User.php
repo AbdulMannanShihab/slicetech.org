@@ -77,4 +77,8 @@ class User extends Authenticatable implements FilamentUser
     public function Moderator(){
         return $this->role === self::ROLE_MODERATOR;
     }
+
+    public function likes(){
+        return $this->belongsToMany(Post::class, 'post_like')->withTimestamps();
+    }
 }

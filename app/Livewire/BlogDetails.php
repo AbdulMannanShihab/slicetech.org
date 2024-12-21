@@ -8,6 +8,7 @@ use Livewire\Component;
 #[Title('Blog Details')]
 class BlogDetails extends Component
 {
+    public $post_id;
     public $auther;
     public $title;
     public $image;
@@ -17,6 +18,7 @@ class BlogDetails extends Component
     public function mount($slug)
     {
         $post = Post::where('slug', $slug)->first();
+        $this->post_id = $post->id;
         $this->auther = $post->user->name;
         $this->title = $post->title;
         $this->image = $post->image;
