@@ -8,7 +8,7 @@
               Learn how to build dynamic web applications efficiently using modern frameworks and tools. 
               Stay updated with the latest tips and best practices in PHP development.">
         <meta name="author" content="Mannan Shihab">
-        <title>{{ $title ?? 'SliceTech' }}</title>
+        {!! seo() !!}
         <link rel="icon" href="{{ asset('asset/images/SliceTechFavicon.png') }}">
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         @livewireStyles
