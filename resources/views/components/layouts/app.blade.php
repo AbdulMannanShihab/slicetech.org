@@ -9,6 +9,7 @@
               Stay updated with the latest tips and best practices in PHP development.">
         <meta name="author" content="Mannan Shihab">
         {!! seo() !!}
+        <title>{{ $title ?? 'SliceTech' }}</title>
         <link rel="icon" href="{{ asset('asset/images/SliceTechFavicon.png') }}">
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         @livewireStyles
