@@ -24,6 +24,8 @@ class AdminPanelProvider extends PanelProvider
     {
         return $panel
             ->default()
+            ->brandName('SliceTech')
+            ->brandLogo(asset('asset/images/SLICETECH.png'))
             ->id('admin')
             ->path('admin')
             ->profile()

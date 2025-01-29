@@ -3,8 +3,10 @@
     <div class="relative md:flex md:items-center md:justify-between">
       <div class="flex items-center justify-between">
         <a wire:navigate class="flex-none text-4xl font-bold dark:text-white dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="/" aria-label="Brand">
-          <h1 class="hidden">Slice<span class="text-blue-600">Tech</span></h1>
-          <img src="{{ asset('asset/images/SLICETECHFacebookCoverPhoto.png') }}" alt="sliceTech.image" width="220px">
+          <div class="flex items-center">
+{{--             <img src="{{ asset('asset/images/SliceTechFavicon.png') }}" alt="logo"> --}}
+            <h1>Slice<span class="text-blue-600">Tech</span></h1>
+          </div>
         </a>
         
         <div class="md:hidden">
