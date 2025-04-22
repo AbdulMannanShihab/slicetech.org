@@ -9,8 +9,11 @@ use Livewire\Component;
 class BlogDetails extends Component
 {
     public $post_id;
-    public $auther;
+    public $slug;
     public $title;
+    public $category_id;
+    public $category_name;
+    public $category_image;
     public $image;
     public $description;
     public $create_at;
@@ -19,7 +22,9 @@ class BlogDetails extends Component
     {
         $post = Post::where('slug', $slug)->first();
         $this->post_id = $post->id;
-        $this->auther = $post->user->name;
+        $this->category_name = $post->category->name;
+        $this->category_id = $post->category->id;
+        $this->category_image = $post->category->image;
         $this->title = $post->title;
         $this->image = $post->image;
         $this->description = $post->description;
@@ -27,6 +32,10 @@ class BlogDetails extends Component
     }
     public function render()
     {
-        return view('livewire.blog-details');
+        $posts = Post::where('category_id', $this->category_id)->orderBy('id', 'ASC')->get();
+
+        return view('livewire.blog-details',[
+            'posts' => $posts,
+        ]);
     }
 }

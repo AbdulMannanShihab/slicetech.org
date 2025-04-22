@@ -1,7 +1,6 @@
 <?php
 
 use App\Livewire\BlogDetails;
-use App\Livewire\Blogs;
 use App\Livewire\Home;
 use App\Livewire\SingleCategoryPage;
 use Illuminate\Support\Facades\Route;
