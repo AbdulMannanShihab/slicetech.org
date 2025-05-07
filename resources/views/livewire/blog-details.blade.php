@@ -61,7 +61,7 @@
                                 </ul>
                             </figcaption>
                         </figure>
-                        <div class="prose prose-xl dark:prose-dark text-justify">
+                        <div class="prose prose-base sm:prose-lg md:prose-xl dark:prose-dark text-left md:text-justify px-4">
                             {!! $description !!}
                         </div>
                     </div>
