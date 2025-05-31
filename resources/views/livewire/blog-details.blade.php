@@ -72,8 +72,8 @@
             <!-- Sidebar -->
             <div>
                 <div class="sticky top-10 start-0 py-8 lg:ps-8">
-                    @foreach ($posts as $post)
-                        <!-- Service List -->
+                    @forelse ($posts as $post)
+                         <!-- Service List -->
                         <a class="group flex flex-col mt-4 border shadow-sm rounded-xl hover:shadow-lg"
                             href="{{ route('blog-details', $post->slug) }}" wire:navigate>
                             <div class="p-4 md:p-5">
@@ -90,7 +90,11 @@
                             </div>
                         </a>
                         <!-- End Service List -->
-                    @endforeach
+                    @empty
+                        <div class="text-center">
+                            <p>No post found</p>
+                        </div>
+                    @endforelse
                 </div>
             </div>
             <!-- End Sidebar -->

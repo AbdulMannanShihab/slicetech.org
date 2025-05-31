@@ -21,6 +21,9 @@ class BlogDetails extends Component
     public function mount($slug)
     {
         $post = Post::where('slug', $slug)->first();
+        if (!$post) {
+            abort(404); // or redirect to a fallback
+        }
         $this->post_id = $post->id;
         $this->category_name = $post->category->name;
         $this->category_id = $post->category->id;
