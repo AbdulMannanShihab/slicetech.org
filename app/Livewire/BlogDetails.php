@@ -35,7 +35,10 @@ class BlogDetails extends Component
     }
     public function render()
     {
-        $posts = Post::where('category_id', $this->category_id)->orderBy('id', 'ASC')->get();
+        $posts = Post::where('category_id', $this->category_id)
+                    ->where('status', 'Approved')
+                    ->orderBy('id', 'ASC')
+                    ->get();
 
         return view('livewire.blog-details',[
             'posts' => $posts,
