@@ -20,9 +20,9 @@ class Home extends Component
         if($this->search){
             $blogs = Post::select('title', 'description', 'image', 'slug')->where('title', 'like', '%'.$this->search.'%')
             ->orderBy('id', 'desc')->paginate($this->rows);
-            
+
         }else{
-            $blogs = Post::whereNull('deleted_at')->orderBy('id', 'desc')->paginate($this->rows);
+            $blogs = Post::whereNull('deleted_at')->where('status', 'Approved')->orderBy('id', 'desc')->paginate($this->rows);
         }
         return view('livewire.home',[
             'blogs' => $blogs
