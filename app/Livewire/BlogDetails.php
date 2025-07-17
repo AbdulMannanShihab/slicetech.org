@@ -37,6 +37,7 @@ class BlogDetails extends Component
     {
         $posts = Post::where('category_id', $this->category_id)
                     ->where('status', 'Approved')
+                    ->where('slug', $this->slug)
                     ->orderBy('id', 'ASC')
                     ->get();
 
