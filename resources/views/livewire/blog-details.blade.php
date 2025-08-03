@@ -72,29 +72,33 @@
             <!-- Sidebar -->
             <div>
                 <div class="sticky top-10 start-0 py-8 lg:ps-8">
-                    @forelse ($posts as $post)
-                         <!-- Service List -->
-                        <a class="group flex flex-col mt-4 border shadow-sm rounded-xl hover:shadow-lg"
-                            href="{{ route('blog-details', $post->slug) }}" wire:navigate>
-                            <div class="p-4 md:p-5">
-                                <div class="flex justify-between items-center">
-                                    <div class="flex items-center">
-                                        <img class="h-[2.375rem] w-[2.375rem] rounded-full" src="{{ asset($post->image) }}">
-                                        <div class="ms-3">
-                                            <h3 class="group-hover:text-blue-600 font-semibold {{ $post->slug == $slug ? 'text-red-600' : '' }}">
-                                                {{$post->title}}
-                                            </h3>
+                    @persist('scrollbar')
+                    <div class="overflow-y-scroll max-h-[600px]" wire:scroll>
+                        @forelse ($posts as $post)
+                            <!-- Service List -->
+                            <a class="group flex flex-col mt-4 border shadow-sm rounded-xl hover:shadow-lg"
+                                href="{{ route('blog-details', $post->slug) }}" wire:navigate>
+                                <div class="p-4 md:p-5">
+                                    <div class="flex justify-between items-center">
+                                        <div class="flex items-center">
+                                            <img class="h-[2.375rem] w-[2.375rem] rounded-full" src="{{ asset($post->image) }}">
+                                            <div class="ms-3">
+                                                <h3 class="group-hover:text-blue-600 font-semibold {{ $post->slug == $slug ? 'text-red-600' : '' }}">
+                                                    {{$post->title}}
+                                                </h3>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+                            </a>
+                            <!-- End Service List -->
+                        @empty
+                            <div class="text-center">
+                                <p>No post found</p>
                             </div>
-                        </a>
-                        <!-- End Service List -->
-                    @empty
-                        <div class="text-center">
-                            <p>No post found</p>
-                        </div>
-                    @endforelse
+                        @endforelse
+                    </div>
+                    @endpersist
                 </div>
             </div>
             <!-- End Sidebar -->
