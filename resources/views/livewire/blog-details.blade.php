@@ -77,7 +77,7 @@
                         @forelse ($posts as $post)
                             <!-- Service List -->
                             <a class="group flex flex-col mt-4 border shadow-sm rounded-xl hover:shadow-lg"
-                                href="{{ route('blog-details', $post->slug) }}" wire:navigate>
+                                href="{{ route('blog-details', $post->slug) }}">
                                 <div class="p-4 md:p-5">
                                     <div class="flex justify-between items-center">
                                         <div class="flex items-center">
